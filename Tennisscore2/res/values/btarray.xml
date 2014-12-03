@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="btar">
+        <item>button1</item>
+        <item>button2</item>
+        <item>button3</item>
+        <item>button4</item>
+        <item>button5</item>
+        <item>button6</item>
+        <item>button7</item>
+        <item>button8</item>
+        <item>button9</item>
+        <item>button10</item>
+        <item>button11</item>
+        <item>button12</item>
+        <item>button13</item>
+        <item>button14</item>
+        <item>button15</item>
+        <item>button16</item>
+        <item>button17</item>
+        <item>button18</item>
+        <item>button19</item>
+        <item>button20</item>
+    </string-array>
+    
+</resources>
