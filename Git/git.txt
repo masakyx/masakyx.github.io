@@ -1,0 +1,4 @@
+ status 今何を追跡しているのかを見れる
+ add 追跡したもの入力
+ commit -m "message" これでコミットすることができる
+ git push -u origin master で変更内容を記録することができる
