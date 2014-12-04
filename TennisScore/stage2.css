@@ -34,9 +34,11 @@ input[name="back out1"],input[name="back out2"]{
 #vhr{
   position:absolute;
   left:50%;
-  width:10px;
-  background-color:green;
-  top:55px;
+  top:83px;
   height:100%;
+  background-color:green;
 }
-
+hr.hhr{
+  height:5px;
+  background-color:green;
+}
