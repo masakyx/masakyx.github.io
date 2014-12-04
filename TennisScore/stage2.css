@@ -11,12 +11,12 @@ input[name="usn3"],input[name="usn4"]{
 input[name="usn2"],input[name="usn4"]{
   margin-top:5px;
 }
-input[name="service"],input[name="fault"],input[name="side out1"],input[name="back out1"]{
-  position:absolute;
+input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"]{
+  position:absolute;                        
   width:30%;
   left:10px;
 }  
-input[name="return in"],input[name="return miss"],input[name="side out2"],input[name="back out2"]{
+input[name="return in"],input[name="return miss"],input[name="winning2"],input[name="side out2"],input[name="back out2"],input[name="net2"]{
   position:absolute;
   width:30%;
   right:10px;
@@ -24,11 +24,17 @@ input[name="return in"],input[name="return miss"],input[name="side out2"],input[
 input[name="fault"],input[name="return miss"]{
   margin-top:10px;
 }
-input[name="side out1"],input[name="side out2"]{
+input[name="winning1"],input[name="winning2"]{
   margin-top:20px;
+}
+input[name="side out1"],input[name="side out2"]{
+  margin-top:30px;
 }                   
 input[name="back out1"],input[name="back out2"]{
-  margin-top:30px;
+  margin-top:40px;
+}
+input[name="net1"],input[name="net2"]{
+  margin-top:50px;
 }
 #vhr{
   position:absolute;
@@ -46,4 +52,5 @@ input[name="change"]{
   left:32%;
   width:36%;
   height:105px;
+  background-color:#223388;
 }
