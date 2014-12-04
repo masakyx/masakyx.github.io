@@ -1,16 +1,15 @@
-input[name="usn1"],input[name="usn3"]{
-  position:absolute;
-  width:30%;
-  right:10px;
-}
-input[name="usn2"],input[name="usn4"]{
+input[name="usn1"],input[name="usn2"]{
   position:absolute;
   width:30%;
   left:10px;
 }
 input[name="usn3"],input[name="usn4"]{
   position:absolute;
-  top:160px;
+  width:30%;
+  right:10px;
+}
+input[name="usn2"],input[name="usn4"]{
+  margin-top:5px;
 }
 input[name="service"],input[name="fault"],input[name="side out1"],input[name="back out1"]{
   position:absolute;
@@ -41,4 +40,10 @@ input[name="back out1"],input[name="back out2"]{
 hr.hhr{
   height:5px;
   background-color:green;
+}     
+input[name="change"]{
+  position:absolute;
+  left:32%;
+  width:36%;
+  height:105px;
 }
