@@ -31,4 +31,12 @@ input[name="side out1"],input[name="side out2"]{
 input[name="back out1"],input[name="back out2"]{
   margin-top:30px;
 }
- 
+#vhr{
+  position:absolute;
+  left:50%;
+  width:10px;
+  background-color:green;
+  top:55px;
+  height:100%;
+}
+
