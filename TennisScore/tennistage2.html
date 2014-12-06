@@ -6,6 +6,7 @@
   <title>TennisScore</title>
 </head>
   <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="stage2.js"></script>
     <script>
     </script>
@@ -51,4 +52,12 @@
       </div>
     </form>
   </body>
+  <script>
+    jQuery(function ($){
+      $(".scorebt").click(function(){
+        $(this).slideUp();
+      //  css("background-color",red);
+      });
+    });
+  </script>
 </html>
