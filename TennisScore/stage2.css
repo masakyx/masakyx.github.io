@@ -1,11 +1,11 @@
 input[name="usn1"],input[name="usn2"]{
   position:absolute;
-  width:30%;
+  width:45%;
   left:10px;
 }
 input[name="usn3"],input[name="usn4"]{
-  position:absolute;
-  width:30%;
+  position:absolute;                           
+  width:45%;
   right:10px;
 }
 input[name="usn2"],input[name="usn4"]{
