@@ -52,12 +52,14 @@ input[name="change1"]{
   left:32%;
   width:17%;
   height:105px;
+  border:1px solid black;
 }  
 input[name="change2"]{
   position:absolute;
   right:32%;
   width:17%;
   height:105px;
+  border:1px solid black;
 }
 #score1,#gamest1,#setst1{
   position:absolute;
