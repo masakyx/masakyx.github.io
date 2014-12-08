@@ -47,10 +47,27 @@ hr.hhr{
   height:5px;
   background-color:green;
 }     
-input[name="change"]{
+input[name="change1"]{
   position:absolute;
   left:32%;
-  width:36%;
+  width:17%;
   height:105px;
-  background-color:#223388;
+}  
+input[name="change2"]{
+  position:absolute;
+  right:32%;
+  width:17%;
+  height:105px;
+}
+#score1,#gamest1,#setst1{
+  position:absolute;
+  width:45%;
+  left:10px;
+  margin-top:5px;
+}
+#score2,#gamest2,#setst2{
+  position:absolute;
+  width:45%;
+  right:10px;
+  margin-top:5px;
 }
