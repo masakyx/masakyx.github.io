@@ -18,4 +18,37 @@ jQuery(function ($){
         $(this).css("background-image","url(stroke.jpg)");
       }
     });
+
+//Player1
+    $("#service").click(function (){
+    });
+    $("#serviceace").click(function (){
+    });
+    $("#fault").click(function (){
+    }); 
+    $("#win1").click(function (){
+    });
+    $("#side1").click(function (){
+    }); 
+    $("#back1").click(function (){
+    }); 
+    $("#net1").click(function (){
+    }); 
+
+//Player 2
+    $("#returnin").click(function (){
+    }); 
+    $("#returnace").click(function (){
+    }); 
+    $("#rm").click(function (){
+    }); 
+    $("#win2").click(function (){
+    }); 
+    $("#side2").click(function (){
+    }); 
+    $("#back2").click(function (){
+    }); 
+    $("#net2").click(function (){
+    }); 
 });
+
