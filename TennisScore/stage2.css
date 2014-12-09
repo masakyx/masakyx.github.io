@@ -11,30 +11,33 @@ input[name="usn3"],input[name="usn4"]{
 input[name="usn2"],input[name="usn4"]{
   margin-top:5px;
 }
-input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"]{
+input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"],input[name="Serviceace"]{
   position:absolute;                        
   width:30%;
   left:10px;
 }  
-input[name="return in"],input[name="return miss"],input[name="winning2"],input[name="side out2"],input[name="back out2"],input[name="net2"]{
+input[name="return in"],input[name="return miss"],input[name="winning2"],input[name="side out2"],input[name="back out2"],input[name="net2"],input[name="Returnace"]{
   position:absolute;
   width:30%;
   right:10px;
 }  
-input[name="fault"],input[name="return miss"]{
+input[name="Serviceace"],input[name="Returnace"]{
   margin-top:10px;
 }
-input[name="winning1"],input[name="winning2"]{
+input[name="fault"],input[name="return miss"]{
   margin-top:20px;
 }
-input[name="side out1"],input[name="side out2"]{
+input[name="winning1"],input[name="winning2"]{
   margin-top:30px;
+}
+input[name="side out1"],input[name="side out2"]{
+  margin-top:40px;
 }                   
 input[name="back out1"],input[name="back out2"]{
-  margin-top:40px;
+  margin-top:50px;
 }
 input[name="net1"],input[name="net2"]{
-  margin-top:50px;
+  margin-top:60px;
 }
 #vhr{
   position:absolute;
@@ -50,7 +53,7 @@ hr.hhr{
 input[name="change1"]{
   position:absolute;
   left:32%;
-  width:17%;                               
+  width:17%;
   height:105px;
   border:1px solid black;
   background-image:url("stroke.jpg");
