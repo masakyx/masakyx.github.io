@@ -1,4 +1,7 @@
 jQuery(function ($){
+  $('input[name="usn2"],input[name="usn4"]').slideUp();
+
+
   $('input[name="gametype"]').click(function (){
     var gametypecheck = $('#single').is(":checked");
 
@@ -33,6 +36,7 @@ jQuery(function ($){
 
 //Player1
     $("#service").click(function (){
+      $(this).val("IN");
     });
     $("#serviceace").click(function (){
     });
@@ -58,9 +62,10 @@ jQuery(function ($){
     }); 
     $("#side2").click(function (){
     }); 
-    $("#back2").click(function (){
+    $("#back2").click(function (){        
     }); 
     $("#net2").click(function (){
     }); 
 });
+
 
