@@ -1,4 +1,16 @@
 jQuery(function ($){
+  $('input[name="gametype"]').click(function (){
+    var gametypecheck = $('#single').is(":checked");
+
+
+    if(gametypecheck){
+      $('input[name="usn2"],input[name="usn4"]').slideUp();
+    }else{
+      $('input[name="usn2"],input[name="usn4"]').slideDown();
+    }
+    console.log(gametypecheck);
+  });
+
   var i=0;//change1 number
   var k=0;//change2 number
     $("#change1").click(function (){
