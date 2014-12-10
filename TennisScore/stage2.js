@@ -1,12 +1,15 @@
   var i=0;//change1 number
   var k=0;//change2 number
-  var j=0;//fault button    
+  var j=0;//fault button 
+  var c=0;//change cort button
 
 
 jQuery(function ($){
 //初期設定
   $('input[name="usn2"],input[name="usn4"]').slideUp();
-  strclosebutton();
+  strclosebutton();   
+  $(".leftbt").css("background-color","#b3b3b3");
+  $(".rightbt").css("background-color","#7fff00");  
 
 
 
@@ -43,6 +46,12 @@ jQuery(function ($){
       }else{
         $(this).css("background-image","url(stroke.jpg)");
       }
+    });
+
+//CHANGE CORT
+    $("#chanco").click(function (){
+      c++;
+      changecort();
     });
 
 //Player1
@@ -130,6 +139,17 @@ function strclosebutton(){
 }
 function stropenbutton(){
   $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideDown();
+  return 0;
 }
   
-
+function changecort(){
+  console.log(c);
+  if(c%2 == 1){
+    $(".leftbt").animate({"right":'10px'},"slow");
+    $(".rightbt").animate({"left":'10px'},"slow");
+  }else{
+    $(".leftbt").animate({"left":'10px'},"slow");
+    $(".rightbt").animate({"right":'10px'},"slow");  
+  } 
+  return 0;
+}
