@@ -1,8 +1,16 @@
   var i=0;//change1 number
   var k=0;//change2 number
   var j=0;//fault button    
+
+
 jQuery(function ($){
+//初期設定
   $('input[name="usn2"],input[name="usn4"]').slideUp();
+  strclosebutton();
+
+
+
+
 
 
   $('input[name="gametype"]').click(function (){
@@ -57,15 +65,19 @@ jQuery(function ($){
     }); 
     $("#win1").click(function (){
       openbutton();
+      strclosebutton();
     });
     $("#side1").click(function (){
       openbutton();
+      strclosebutton();
     }); 
     $("#back1").click(function (){
       openbutton();
+      strclosebutton();
     }); 
     $("#net1").click(function (){
       openbutton();
+      strclosebutton();
     }); 
 
 //Player 2
@@ -75,6 +87,7 @@ jQuery(function ($){
       $("#rm").slideUp();
       $("#fault").val("Fault");
       j=0;
+      stropenbutton();
     }); 
     $("#returnace").click(function (){
       openbutton();
@@ -84,15 +97,19 @@ jQuery(function ($){
     }); 
     $("#win2").click(function (){
       openbutton();
+      strclosebutton();
     }); 
     $("#side2").click(function (){
       openbutton();
+      strclosebutton();
     }); 
     $("#back2").click(function (){
       openbutton();
+      strclosebutton();
     }); 
     $("#net2").click(function (){
       openbutton();
+      strclosebutton();
     }); 
 });
 
@@ -106,6 +123,13 @@ function openbutton(){
   $("#fault").val("Fault");
   j=0;
   return 0;
+}
+function strclosebutton(){
+  $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideUp();
+  return 0;
+}
+function stropenbutton(){
+  $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideDown();
 }
   
 
