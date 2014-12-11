@@ -47,15 +47,21 @@ jQuery(function ($){
 //CHANGE CORT
     $("#chanco").click(function (){
       c++;
+    //stroke button
       var posi1 = $("#returnin").offset();
       var posi2 = $("#service").offset();
+    //player text button   
       var posi3 = $("#usn3").offset();
       var posi4 = $("#usn1").offset();
+    //change button
+      var posi5 = $("#change2").offset();
+      var posi6 = $("#change1").offset();
+    //score text
 
       if(c%2 == 1){
-        changecort(posi1.left - 10,posi3.left - 10);
+        changecort(posi1.left - 10,posi3.left - 10,posi5.left - posi6.left);
       }else{
-        changecort(posi2.left - 10,posi4.left - 10);
+        changecort(posi2.left - 10,posi4.left - 10,posi6.left - posi5.left);
       }
     });
 
@@ -164,17 +170,21 @@ function chanco(a){
   }
 }
   
-function changecort(po1,po2){
+function changecort(po1,po2,po3){
   if(c%2 == 1){
     $(".leftbt").animate({"left":'+=' + po1},"slow");
     $(".rightbt").animate({"right":'+=' + po1},"slow");
     $("#usn1,#usn2").animate({"left":'+=' + po2},'slow');
     $("#usn3,#usn4").animate({"right":'+=' + po2},'slow');
+    $("#change1").animate({"left":'+=' + po3},'slow');
+    $("#change2").animate({"right":'+=' + po3},'slow');
   }else{
     $(".leftbt").animate({"left":'-=' + po1},"slow");
     $(".rightbt").animate({"right":'-=' + po1},"slow");  
     $("#usn1,#usn2").animate({"left":'-=' + po2},'slow');
-    $("#usn3,#usn4").animate({"right":'-=' + po2},'slow'); 
+    $("#usn3,#usn4").animate({"right":'-=' + po2},'slow');
+    $("#change1").animate({"left":'-=' + po3},'slow');
+    $("#change2").animate({"right":'-=' + po3},'slow');
   } 
   return 0;
 }
