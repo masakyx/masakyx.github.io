@@ -180,11 +180,30 @@ function changecort(po1,po2,po3){
     $("#change2").animate({"right":'+=' + po3},'slow');
   }else{
     $(".leftbt").animate({"left":'-=' + po1},"slow");
-    $(".rightbt").animate({"right":'-=' + po1},"slow");  
+    $(".rightbt").animate({"right":'-=' + po1},"slow");
     $("#usn1,#usn2").animate({"left":'-=' + po2},'slow');
     $("#usn3,#usn4").animate({"right":'-=' + po2},'slow');
     $("#change1").animate({"left":'-=' + po3},'slow');
     $("#change2").animate({"right":'-=' + po3},'slow');
   } 
+  return 0;
+}
+
+function reposition(){
+  if(c%2 == 1){
+    $(".leftbt").css({"right":'10px'});
+    $(".rightbt").css({"left":'10px'});
+    $("#usn1,#usn2").css({"right":'10px'});
+    $("#usn3,#usn4").css({"left":'10px'});
+    $("#change1").css({"right":'32%'});
+    $("#change2").css({"left":'32%'}); 
+  }else{
+    $(".leftbt").css({"left":'10px'});
+    $(".rightbt").css({"right":'10px'});
+    $("#usn1,#usn2").css({"left":'10px'});
+    $("#usn3,#usn4").css({"right":'10px'});
+    $("#change1").css({"left":'32%'});
+    $("#change2").css({"right":'32%'});   
+  }
   return 0;
 }

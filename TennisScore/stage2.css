@@ -2,11 +2,13 @@ input[name="usn1"],input[name="usn2"]{
   position:absolute;
   width:45%;
   left:10px;
+  border-color:#b3b3b3;
 }
 input[name="usn3"],input[name="usn4"]{
   position:absolute;                           
   width:45%;
   right:10px;
+  border-color:#7fff00;
 }
 input[name="usn2"],input[name="usn4"]{
   margin-top:5px;
@@ -72,21 +74,31 @@ input[name="change2"]{
   position:absolute;
   width:45%;
   left:10px;
-  margin-top:5px;
+  background-color:#b3b3b3;
 }
 #score2,#gamest2,#setst2{
   position:absolute;
   width:45%;
   right:10px;
+  background-color:#7fff00;
+}
+#setst1,#setst2{
   margin-top:5px;
+}
+#gamest1,#gamest2{
+  margin-top:20px;
+}
+#score1,#score2{
+  margin-top:35px;
 }
 input[name="changecort"]{
   position:absolute;
-  top:400px;
+  top:450px;
   width:36%;
   left:32%;
   height:76px;
   background-image:url("tenniscort.jpg");
   background-size:100% 76px;
   font-size:1.5em;
-}                                          
+} 
+
