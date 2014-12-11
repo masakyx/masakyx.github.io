@@ -22,7 +22,6 @@ jQuery(function ($){
     }else{
       $('input[name="usn2"],input[name="usn4"]').slideDown();
     }
-    console.log(gametypecheck);
   });
 
  
@@ -62,6 +61,7 @@ jQuery(function ($){
       $(this).slideUp();
       $("#serviceace").slideUp();
       $("#fault").slideUp();
+      chanco(1);
     });
     $("#serviceace").click(function (){
       $("#fault").val("Fault");
@@ -78,18 +78,22 @@ jQuery(function ($){
     $("#win1").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     });
     $("#side1").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
     $("#back1").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
     $("#net1").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
 
 //Player 2
@@ -100,6 +104,7 @@ jQuery(function ($){
       $("#fault").val("Fault");
       j=0;
       stropenbutton();
+      chanco(1);
     }); 
     $("#returnace").click(function (){
       openbutton();
@@ -110,18 +115,22 @@ jQuery(function ($){
     $("#win2").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
     $("#side2").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
     $("#back2").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
     $("#net2").click(function (){
       openbutton();
       strclosebutton();
+      chanco(2);
     }); 
 });
 
@@ -144,16 +153,23 @@ function stropenbutton(){
   $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideDown();
   return 0;
 }
+function chanco(a){
+  if(a == 1){
+    $("#chanco").slideUp();
+  }else if(a == 2){
+    $("#chanco").slideDown();
+  }
+}
   
 function changecort(po1){
   console.log(c); 
   console.log(po1);
   if(c%2 == 1){
-    $(".leftbt").animate({"left":+=po1},"slow");
-    $(".rightbt").animate({"left":'-=po1'},"slow");
+    $(".leftbt").animate({"left":'+=' + po1},"slow");
+    $(".rightbt").animate({"right":'+=' + po1},"slow");
   }else{
-    $(".leftbt").animate({"left":'+=po1'},"slow");
-    $(".rightbt").animate({"left":'-=po1'},"slow");  
+    $(".leftbt").animate({"left":'-=' + po1},"slow");
+    $(".rightbt").animate({"right":'-=' + po1},"slow");  
   } 
   return 0;
 }
