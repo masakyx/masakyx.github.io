@@ -11,10 +11,7 @@ jQuery(function ($){
   $(".leftbt").css("background-color","#b3b3b3");
   $(".rightbt").css("background-color","#7fff00");  
 
-
-
-
-
+ 
 
   $('input[name="gametype"]').click(function (){
     var gametypecheck = $('#single').is(":checked");
@@ -51,7 +48,13 @@ jQuery(function ($){
 //CHANGE CORT
     $("#chanco").click(function (){
       c++;
-      changecort();
+      var posi1 = $("#returnin").offset();
+      var posi2 = $("#service").offset();
+      if(c%2 == 1){
+        changecort(posi1.left - 10);
+      }else{
+        changecort(posi2.left - 10);
+      }
     });
 
 //Player1
@@ -142,14 +145,15 @@ function stropenbutton(){
   return 0;
 }
   
-function changecort(){
-  console.log(c);
+function changecort(po1){
+  console.log(c); 
+  console.log(po1);
   if(c%2 == 1){
-    $(".leftbt").animate({"right":'10px'},"slow");
-    $(".rightbt").animate({"left":'10px'},"slow");
+    $(".leftbt").animate({"left":+=po1},"slow");
+    $(".rightbt").animate({"left":'-=po1'},"slow");
   }else{
-    $(".leftbt").animate({"left":'10px'},"slow");
-    $(".rightbt").animate({"right":'10px'},"slow");  
+    $(".leftbt").animate({"left":'+=po1'},"slow");
+    $(".rightbt").animate({"left":'-=po1'},"slow");  
   } 
   return 0;
 }
