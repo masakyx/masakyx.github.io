@@ -57,11 +57,13 @@ jQuery(function ($){
       var posi5 = $("#change2").offset();
       var posi6 = $("#change1").offset();
     //score text
+      var posi7 = $("#setst2").offset();
+      var posi8 = $("#setst1").offset();
 
       if(c%2 == 1){
-        changecort(posi1.left - 10,posi3.left - 10,posi5.left - posi6.left);
+        changecort(posi1.left - 10,posi3.left - 10,posi5.left - posi6.left,posi7.left - 10);
       }else{
-        changecort(posi2.left - 10,posi4.left - 10,posi6.left - posi5.left);
+        changecort(posi2.left - 10,posi4.left - 10,posi6.left - posi5.left,posi8.left - 10);
       }
     });
 
@@ -170,7 +172,7 @@ function chanco(a){
   }
 }
   
-function changecort(po1,po2,po3){
+function changecort(po1,po2,po3,po4){
   if(c%2 == 1){
     $(".leftbt").animate({"left":'+=' + po1},"slow");
     $(".rightbt").animate({"right":'+=' + po1},"slow");
@@ -178,6 +180,8 @@ function changecort(po1,po2,po3){
     $("#usn3,#usn4").animate({"right":'+=' + po2},'slow');
     $("#change1").animate({"left":'+=' + po3},'slow');
     $("#change2").animate({"right":'+=' + po3},'slow');
+    $(".pl1").animate({"left":'+=' + po4},'slow');
+    $(".pl2").animate({"right":'+=' + po4},'slow');
   }else{
     $(".leftbt").animate({"left":'-=' + po1},"slow");
     $(".rightbt").animate({"right":'-=' + po1},"slow");
@@ -185,6 +189,8 @@ function changecort(po1,po2,po3){
     $("#usn3,#usn4").animate({"right":'-=' + po2},'slow');
     $("#change1").animate({"left":'-=' + po3},'slow');
     $("#change2").animate({"right":'-=' + po3},'slow');
+    $(".pl1").animate({"left":'-=' + po4},'slow');
+    $(".pl2").animate({"right":'-=' + po4},'slow');
   } 
   return 0;
 }
