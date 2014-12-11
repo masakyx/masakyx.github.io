@@ -49,10 +49,13 @@ jQuery(function ($){
       c++;
       var posi1 = $("#returnin").offset();
       var posi2 = $("#service").offset();
+      var posi3 = $("#usn3").offset();
+      var posi4 = $("#usn1").offset();
+
       if(c%2 == 1){
-        changecort(posi1.left - 10);
+        changecort(posi1.left - 10,posi3.left - 10);
       }else{
-        changecort(posi2.left - 10);
+        changecort(posi2.left - 10,posi4.left - 10);
       }
     });
 
@@ -161,15 +164,17 @@ function chanco(a){
   }
 }
   
-function changecort(po1){
-  console.log(c); 
-  console.log(po1);
+function changecort(po1,po2){
   if(c%2 == 1){
     $(".leftbt").animate({"left":'+=' + po1},"slow");
     $(".rightbt").animate({"right":'+=' + po1},"slow");
+    $("#usn1,#usn2").animate({"left":'+=' + po2},'slow');
+    $("#usn3,#usn4").animate({"right":'+=' + po2},'slow');
   }else{
     $(".leftbt").animate({"left":'-=' + po1},"slow");
     $(".rightbt").animate({"right":'-=' + po1},"slow");  
+    $("#usn1,#usn2").animate({"left":'-=' + po2},'slow');
+    $("#usn3,#usn4").animate({"right":'-=' + po2},'slow'); 
   } 
   return 0;
 }
