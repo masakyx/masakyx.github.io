@@ -65,7 +65,7 @@ jQuery(function ($){
       }else{
         changecort(posi2.left - 10,posi4.left - 10,posi6.left - posi5.left,posi8.left - 10);
       }
-    });
+    });                                
 
 //Player1
     $("#service").click(function (){
