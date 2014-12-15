@@ -5,13 +5,13 @@ input[name="usn1"],input[name="usn2"]{
   border-color:#b3b3b3;
 }
 input[name="usn3"],input[name="usn4"]{
-  position:fixed;                           
+  position:absolute;                           
   width:45%;
   right:10px;
   border-color:#7fff00;
 }
 input[name="usn2"],input[name="usn4"]{
-  margin-top:5px;
+  margin-top:10px;
 }
 input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"],input[name="Serviceace"]{
   position:absolute;                        
