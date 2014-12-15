@@ -26,22 +26,22 @@ input[name="return in"],input[name="return miss"],input[name="winning2"],input[n
   right:10px;
 }  
 input[name="Serviceace"],input[name="Returnace"]{
-  margin-top:15%;
+  margin-top:25%;
 }
 input[name="fault"],input[name="return miss"]{
-  margin-top:30%;
+  margin-top:35;
 }
 input[name="winning1"],input[name="winning2"]{
   margin-top:45%;
 }
 input[name="side out1"],input[name="side out2"]{
-  margin-top:60%;
+  margin-top:55%;
 }                   
 input[name="back out1"],input[name="back out2"]{
-  margin-top:75%;
+  margin-top:65%;
 }
 input[name="net1"],input[name="net2"]{
-  margin-top:90%;
+  margin-top:75%;
 }
 #vhr{
   position:absolute;
@@ -75,23 +75,25 @@ input[name="change2"]{
 #score1,#gamest1,#setst1{
   position:absolute;
   width:45%;
+  height:3%;
   left:10px;
   background-color:#b3b3b3;
 }
 #score2,#gamest2,#setst2{
   position:absolute;
   width:45%;
+  height:3%;
   right:10px;
   background-color:#7fff00;
 }
 #setst1,#setst2{
-  margin-top:5px;
+  margin-top:15%;
 }
 #gamest1,#gamest2{
-  margin-top:20px;
+  margin-top:18%;
 }
 #score1,#score2{
-  margin-top:35px;
+  margin-top:21%;
 }
 input[name="changecort"]{
   position:absolute;
@@ -105,6 +107,12 @@ input[name="changecort"]{
 } 
 .leftbt,.rightbt{
   font-size:100%;
-  height:8%;
+  height:6%;
+}
+input[name="gametype"]{
+  height:9%;
+
+#2hrr{
+  margin-top:14%;
 }
 
