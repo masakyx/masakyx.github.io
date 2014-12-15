@@ -5,7 +5,7 @@ input[name="usn1"],input[name="usn2"]{
   border-color:#b3b3b3;
 }
 input[name="usn3"],input[name="usn4"]{
-  position:absolute;                           
+  position:relative;                           
   width:45%;
   right:10px;
   border-color:#7fff00;
@@ -14,12 +14,12 @@ input[name="usn2"],input[name="usn4"]{
   margin-top:5px;
 }
 input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"],input[name="Serviceace"]{
-  position:absolute;                        
+  position:relative;                        
   width:30%;
   left:10px;
 }  
 input[name="return in"],input[name="return miss"],input[name="winning2"],input[name="side out2"],input[name="back out2"],input[name="net2"],input[name="Returnace"]{
-  position:absolute;
+  position:relative;
   width:30%;
   right:10px;
 }  
@@ -42,7 +42,7 @@ input[name="net1"],input[name="net2"]{
   margin-top:210px;
 }
 #vhr{
-  position:absolute;
+  position:relative;
   left:50%;
   top:83px;
   height:100%;
@@ -53,7 +53,7 @@ hr.hhr{
   background-color:green;
 }     
 input[name="change1"]{
-  position:absolute;
+  position:relative;
   left:32%;
   width:17%;
   height:150px;
@@ -62,7 +62,7 @@ input[name="change1"]{
   background-size:100% 150px;
 }  
 input[name="change2"]{
-  position:absolute;
+  position:relative;
   right:32%;
   width:17%;
   height:150px;
@@ -71,13 +71,13 @@ input[name="change2"]{
   background-size:100% 150px;
 }
 #score1,#gamest1,#setst1{
-  position:absolute;
+  position:relative;
   width:45%;
   left:10px;
   background-color:#b3b3b3;
 }
 #score2,#gamest2,#setst2{
-  position:absolute;
+  position:relative;
   width:45%;
   right:10px;
   background-color:#7fff00;
@@ -92,7 +92,7 @@ input[name="change2"]{
   margin-top:35px;
 }
 input[name="changecort"]{
-  position:absolute;
+  position:relative;
   top:480px;
   width:36%;
   left:32%;
