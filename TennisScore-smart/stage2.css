@@ -13,7 +13,7 @@ input[name="usn3"],input[name="usn4"]{
   border-color:#7fff00;
 }
 input[name="usn2"],input[name="usn4"]{
-  margin-top:10%;
+  margin-top:5%;
 }
 input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"],input[name="Serviceace"]{
   position:absolute;                        
@@ -105,6 +105,6 @@ input[name="changecort"]{
 } 
 .leftbt,.rightbt{
   font-size:100%;
-  height:10%;
+  height:8%;
 }
 
