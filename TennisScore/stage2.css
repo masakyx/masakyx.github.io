@@ -5,7 +5,7 @@ input[name="usn1"],input[name="usn2"]{
   border-color:#b3b3b3;
 }
 input[name="usn3"],input[name="usn4"]{
-  position:absolute;                           
+  position:fixed;                           
   width:45%;
   right:10px;
   border-color:#7fff00;
