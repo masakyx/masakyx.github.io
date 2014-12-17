@@ -92,13 +92,13 @@ function ScorePoint(score,point){
 
 //ゲームカウントメソッド
 function GamePoint(gamest,gamepoint){
-  if(gamepoint < 6){
+  if(gamepoint < 6 || gamepoint1 == 6 && gamepoint2 == 5 || gamepoint1 == 5 && gamepoint2 == 6 ){
     point1 = 0;
     point2 = 0;
     score1.text("0");
     score2.text("0");
     gamest.text(gamepoint);                  
-  }else if(gamepoint == 6 && gamepoint1 < 5 || gamepoint == 6 && gamepoint2 <5){
+  }else if(gamepoint == 6 && gamepoint1 < 5 || gamepoint == 6 && gamepoint2 <5 || gamepoint1 == 7 && gamepoint2 == 5 || gamepoint1 == 5 && gamepoint2 == 7){
     if(gamepoint1 > gamepoint2){
       setpoint1++;
       SetPoint(setst1,setpoint1);
@@ -106,6 +106,11 @@ function GamePoint(gamest,gamepoint){
       setpoint2++;
       SetPoint(setst2,setpoint2);
     }
+  }else if(gamepoint1 == 6 && gamepoint2 == 6){
+    gamest1.text("TIE BREAK");
+    gamest2.text("TIE BREAK");
+    score1.text("0");
+    score2.text("0");
   }
   return 0;
 }
