@@ -19,15 +19,17 @@ jQuery(function ($){
 
     if(gametypecheck){
       $('input[name="usn2"],input[name="usn4"]').slideUp();
+      $('input[name="usn3"]').val("player2");
     }else{
       $('input[name="usn2"],input[name="usn4"]').slideDown();
+      $('input[name="usn3"]').val("player3");
     }
   });
 
  
   
     $("#change1").click(function (){
-      i++;
+      i++;                                                                      
       console.log(i);
       if(i%2 == 1){
         $(this).css("background-image","url(bolay.jpg)");
