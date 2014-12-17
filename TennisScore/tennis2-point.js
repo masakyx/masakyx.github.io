@@ -6,6 +6,7 @@ var gamepoint2 = 0;
 var setpoint1 = 0;
 var setpoint2 = 0;
 var setcount = 1;
+var isTiebreak = 0;
 
 //ID取得
 var score1 = $("#score1");
@@ -36,18 +37,30 @@ jQuery(function($){
 
    $("#serviceace,#win1,#side2,#back2,#net2").click(function(){
      point1++;
-     ScorePoint(score1,point1);
-     console.log("point1="+point1);
+     if(isTiebreak == 0){
+       ScorePoint(score1,point1);
+       console.log("point1="+point1);
+     }else if(isTiebreak == 1){
+
+     }
    });
    $("#returnace,#win2,#side1,#back1,#net1").click(function(){
-     point2++;
-     ScorePoint(score2,point2);
-     console.log("point2="+point2);
+     if(isTiebreak == 0){
+       point2++;
+       ScorePoint(score2,point2);
+       console.log("point2="+point2);
+     }else if(isTiebreak == 1){
+
+     }
    });
    fault.click(function(){   
      if(fault.val() == "Fault" ){
-      point2++;
-      ScorePoint(score2,point2);
+       if(isTiebreak == 0){
+         point2++;
+         ScorePoint(score2,point2);
+       }else if(isTiebreak == 1){
+
+       }
      }
    });
 });
@@ -107,6 +120,9 @@ function GamePoint(gamest,gamepoint){
       SetPoint(setst2,setpoint2);
     }
   }else if(gamepoint1 == 6 && gamepoint2 == 6){
+    isTiebreak=1;//タイブレイク　スタート
+    point1=0;
+    point2=0;
     gamest1.text("TIE BREAK");
     gamest2.text("TIE BREAK");
     score1.text("0");
