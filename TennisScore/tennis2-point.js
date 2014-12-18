@@ -41,25 +41,25 @@ jQuery(function($){
        ScorePoint(score1,point1);
        console.log("point1="+point1);
      }else if(isTiebreak == 1){
-
+       TieBreak(score1,point1);
      }
    });
    $("#returnace,#win2,#side1,#back1,#net1").click(function(){
+     point2++;
      if(isTiebreak == 0){
-       point2++;
        ScorePoint(score2,point2);
        console.log("point2="+point2);
      }else if(isTiebreak == 1){
-
+       TieBreak(score2,point2);
      }
    });
-   fault.click(function(){   
+   fault.click(function(){
+     point2++;
      if(fault.val() == "Fault" ){
        if(isTiebreak == 0){
-         point2++;
          ScorePoint(score2,point2);
        }else if(isTiebreak == 1){
-
+         TieBreak(score2,point2);
        }
      }
    });
@@ -162,6 +162,10 @@ function SetPoint(setst,setpoint){
 }
 
 //タイブレイクメソッド
-function TieBreak(){
+function TieBreak(score,point){
+  if(point < 7){
+    score.text(point)
+  }
+  
 
 }
