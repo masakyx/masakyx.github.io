@@ -41,7 +41,7 @@ jQuery(function($){
        ScorePoint(score1,point1);
        console.log("point1="+point1);
      }else if(isTiebreak == 1){
-       TieBreak(score1,point1);
+       TieBreak(score1,point1,gamest1,gamepoint1);
      }
    });
    $("#returnace,#win2,#side1,#back1,#net1").click(function(){
@@ -50,7 +50,7 @@ jQuery(function($){
        ScorePoint(score2,point2);
        console.log("point2="+point2);
      }else if(isTiebreak == 1){
-       TieBreak(score2,point2);
+       TieBreak(score2,point2,gamest2,gamepoint2);
      }
    });
    fault.click(function(){
@@ -59,7 +59,7 @@ jQuery(function($){
        if(isTiebreak == 0){
          ScorePoint(score2,point2);
        }else if(isTiebreak == 1){
-         TieBreak(score2,point2);
+         TieBreak(score2,point2,gamest2,gamepoint2);
        }
      }
    });
@@ -106,10 +106,7 @@ function ScorePoint(score,point){
 //ゲームカウントメソッド
 function GamePoint(gamest,gamepoint){
   if(gamepoint < 6 || gamepoint1 == 6 && gamepoint2 == 5 || gamepoint1 == 5 && gamepoint2 == 6 ){
-    point1 = 0;
-    point2 = 0;
-    score1.text("0");
-    score2.text("0");
+    ClearPoint();
     gamest.text(gamepoint);                  
   }else if(gamepoint == 6 && gamepoint1 < 5 || gamepoint == 6 && gamepoint2 <5 || gamepoint1 == 7 && gamepoint2 == 5 || gamepoint1 == 5 && gamepoint2 == 7){
     if(gamepoint1 > gamepoint2){
@@ -121,12 +118,9 @@ function GamePoint(gamest,gamepoint){
     }
   }else if(gamepoint1 == 6 && gamepoint2 == 6){
     isTiebreak=1;//タイブレイク　スタート
-    point1=0;
-    point2=0;
+    ClearPoint();
     gamest1.text("TIE BREAK");
     gamest2.text("TIE BREAK");
-    score1.text("0");
-    score2.text("0");
   }
   return 0;
 }
@@ -142,10 +136,7 @@ function SetPoint(setst,setpoint){
     setcount = 5;
   }
 //セットポイントのカウント
-  point1=0;
-  point2=0;
-  score1.text("0");
-  score2.text("0");
+  ClearPoint();
   gamepoint1=0;
   gamepoint2=0;
   gamest1.text("0");
@@ -163,9 +154,30 @@ function SetPoint(setst,setpoint){
 
 //タイブレイクメソッド
 function TieBreak(score,point){
-  if(point < 7){
+  if(point < 7 || point1 > 5 && point2 > 5 && (point1-point2) == 1 || point1 > 5 && point2 > 5 && (point2-point1)==1 || point1 == point2){
     score.text(point)
+  }else if(point1 > 5 && point2 > 5 && (point1-point2)==2 || point1 > 5 && point2 > 5 && (point2-point1)==2 || point1 == 7 && point2 < 6 || point1 < 6 && point2 == 7){
+    gamepoint1=0;
+    gamepoint2=0;
+    gamest1.text("0");
+    gamest2.text("0");
+    isTiebreak=0; //タイブレイク終了
+    if(point1 > point2){
+      setpoint1++;
+      SetPoint(setst1,setpoint1);
+    }else if(point2 > point1){
+      setpoint2++;
+      SetPoint(setst2,setpoint2);
+    }
+    ClearPoint();
   }
-  
+}
 
+//点数初期化メソッド
+function ClearPoint(){
+  point1=0;
+  point2=0;
+  score1.text("0");
+  score2.text("0");
+  return 0;
 }
