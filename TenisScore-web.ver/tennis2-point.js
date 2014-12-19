@@ -7,6 +7,9 @@ var setpoint1 = 0;
 var setpoint2 = 0;
 var setcount = 1;
 var isTiebreak = 0;
+var strbo1 = 0;
+var strbo2 = 0;  //0=stroke 1=bolay
+var server = 0; //0=server=player1 1=server=player2
 
 //ID取得
 var score1 = $("#score1");
@@ -16,7 +19,7 @@ var gamest2 = $("#gamest2");
 var setst1 = $("#setst1");
 var setst2 = $("#setst2");
 var service = $("#service");
-var retrunin = $("#returnin");
+var returnin = $("#returnin");
 var serviceace = $("#serviceace");
 var returnace = $("#returnace");
 var fault = $("#fault");
@@ -32,36 +35,34 @@ var net2 = $("#net2");
 var set1 = $("#set1");
 var set3 = $("#set3");
 var set5 = $("#set5");
+var sercha = $("#schange");
 
 jQuery(function($){
+   StrBolay();
+   sercha.click(function(){
+     console.log(server);
+     if(server == 0){
+       server = 1;
+     }else if(server == 1){
+       server = 0;
+     }
+     ServeChange(server);
+   });
+
+
 
    $("#serviceace,#win1,#side2,#back2,#net2").click(function(){
      point1++;
-     if(isTiebreak == 0){
-       ScorePoint(score1,point1);
-       console.log("point1="+point1);
-     }else if(isTiebreak == 1){
-       TieBreak(score1,point1,gamest1,gamepoint1);
-     }
+     ClickPoint(score1,point1);
    });
    $("#returnace,#win2,#side1,#back1,#net1").click(function(){
      point2++;
-     if(isTiebreak == 0){
-       ScorePoint(score2,point2);
-       console.log("point2="+point2);
-     }else if(isTiebreak == 1){
-       TieBreak(score2,point2,gamest2,gamepoint2);
-     }
+     ClickPoint(score2,point2);
    });
    fault.click(function(){
-     point2++;
-     if(fault.val() == "Fault" ){
-       if(isTiebreak == 0){
-         ScorePoint(score2,point2);
-       }else if(isTiebreak == 1){
-         TieBreak(score2,point2,gamest2,gamepoint2);
-       }
-     }
+     if(ser == 0){ }
+       
+     
    });
 });
 
@@ -105,6 +106,13 @@ function ScorePoint(score,point){
 
 //ゲームカウントメソッド
 function GamePoint(gamest,gamepoint){
+  if(server == 0){
+    server = 1;
+  }else if(server == 1){
+    server = 0;
+  }
+  ServeChange(server);
+
   if(gamepoint < 6 || gamepoint1 == 6 && gamepoint2 == 5 || gamepoint1 == 5 && gamepoint2 == 6 ){
     ClearPoint();
     gamest.text(gamepoint);                  
@@ -154,6 +162,15 @@ function SetPoint(setst,setpoint){
 
 //タイブレイクメソッド
 function TieBreak(score,point){
+  console.log(server);
+  if((point1+point2)%2 == 1){
+    if(server == 0){
+      server = 1;
+    }else if(server == 1){
+      server = 0;
+    }
+    ServeChange(server);
+  }
   if(point < 7 || point1 > 5 && point2 > 5 && (point1-point2) == 1 || point1 > 5 && point2 > 5 && (point2-point1)==1 || point1 == point2){
     score.text(point)
   }else if(point1 > 5 && point2 > 5 && (point1-point2)==2 || point1 > 5 && point2 > 5 && (point2-point1)==2 || point1 == 7 && point2 < 6 || point1 < 6 && point2 == 7){
@@ -180,4 +197,53 @@ function ClearPoint(){
   score1.text("0");
   score2.text("0");
   return 0;
+}
+
+function StrBolay(){
+  $("#change1").click(function (){
+    i++;                                                                    
+    console.log(strbo1);
+    if(i%2 == 1){
+      $(this).css("background-image","url(bolay.jpg)");
+      strbo1 = 1;
+    }else{
+      $(this).css("background-image","url(stroke.jpg)");
+      strbo1 = 0;
+    }
+  });
+  $("#change2").click(function (){
+    k++;
+    if(k%2 == 1){
+      $(this).css("background-image","url(bolay.jpg)");
+      strbo2 = 1;
+    }else{
+      $(this).css("background-image","url(stroke.jpg)");
+      strbo2 = 0;
+    }
+  });
+}
+
+function ServeChange(ser){
+  if(ser == 1){
+    service.val("Return In");
+    serviceace.val("Return ACE");
+    fault.val("Return Miss");
+    returnin.val("Service In");
+    returnace.val("Service ACE");
+    rm.val("Fault");
+  }else if(ser == 0){
+    service.val("Service In");
+    serviceace.val("Service ACE");
+    fault.val("Fault");
+    returnin.val("Return In");
+    returnace.val("Returnn ACE");
+    rm.val("Return Miss");
+  }
+}
+function ClickPoint(score,point,gamest,gampoint){
+  if(isTiebreak == 0){
+    ScorePoint(score,point);
+  }else if(isTiebreak == 1){
+    TieBreak(score,point);
+  }
 }

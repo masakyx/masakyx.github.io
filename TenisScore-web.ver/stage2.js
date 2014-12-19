@@ -5,7 +5,7 @@
 
 
 jQuery(function ($){
-//初期設定
+//初期設定 
   $('input[name="usn2"],input[name="usn4"]').slideUp();
   strclosebutton();   
   $(".leftbt").css("background-color","#b3b3b3");
@@ -28,24 +28,7 @@ jQuery(function ($){
 
  
   
-    $("#change1").click(function (){
-      i++;                                                                      
-      console.log(i);
-      if(i%2 == 1){
-        $(this).css("background-image","url(bolay.jpg)");
-      }else{
-        $(this).css("background-image","url(stroke.jpg)");
-      }
-    });
-    $("#change2").click(function (){
-      k++;
-      if(k%2 == 1){
-        $(this).css("background-image","url(bolay.jpg)");
-      }else{
-        $(this).css("background-image","url(stroke.jpg)");
-      }
-    });
-
+    
 //CHANGE CORT
     $("#chanco").click(function (){
       c++;
@@ -88,28 +71,8 @@ jQuery(function ($){
         $("#fault").val("Fault");
       }
     }); 
-    $("#win1").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    });
-    $("#side1").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    }); 
-    $("#back1").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    }); 
-    $("#net1").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    }); 
+  
 
-//Player 2
     $("#returnin").click(function (){
       $(this).slideUp();
       $("#returnace").slideUp();
@@ -119,32 +82,15 @@ jQuery(function ($){
       stropenbutton();
       chanco(1);
     }); 
-    $("#returnace").click(function (){
+    $("#returnace,#rm").click(function (){
       openbutton();
     }); 
-    $("#rm").click(function (){
-      openbutton();
-    }); 
-    $("#win2").click(function (){
+    $("#win1,#side1,#back1,#net1,#win2,#side2,#back2,#net2").click(function (){
       openbutton();
       strclosebutton();
       chanco(2);
     }); 
-    $("#side2").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    }); 
-    $("#back2").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    }); 
-    $("#net2").click(function (){
-      openbutton();
-      strclosebutton();
-      chanco(2);
-    }); 
+  
 });
 
 function openbutton(){

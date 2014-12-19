@@ -13,7 +13,7 @@ input[name="usn3"],input[name="usn4"]{
 input[name="usn2"],input[name="usn4"]{
   margin-top:10px;
 }
-input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"],input[name="Serviceace"]{
+input[name="service"],input[name="fault"],input[name="winning1"],input[name="side out1"],input[name="back out1"],input[name="net1"],input[name="Serviceace"]{       
   position:absolute;                        
   width:30%;
   left:10px;
@@ -93,14 +93,22 @@ input[name="change2"]{
 }
 input[name="changecort"]{
   position:absolute;
-  top:550px;
+  margin-top:160px;
   width:36%;
   left:32%;
-  height:100px;
+  height:50px;
   background-image:url("tenniscort.jpg");
-  background-size:100% 100px;
+  background-size:100% 50px;
   font-size:1.5em;
-} 
+}
+input[name="serverchange"]{
+  position:absolute;
+  margin-top:220px;
+  width:36%;
+  left:32%;
+  height:50px;
+  font-size:1.5em;
+}
 .leftbt,.rightbt{
   font-size:100%;
   height:50px;
