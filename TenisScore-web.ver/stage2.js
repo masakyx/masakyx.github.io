@@ -44,47 +44,101 @@ jQuery(function ($){
     //score text
       var posi7 = $("#setst2").offset();
       var posi8 = $("#setst1").offset();
-
+     //--------------------------------------------------------------
       if(c%2 == 1){
         changecort(posi1.left - 10,posi3.left - 10,posi5.left - posi6.left,posi7.left - 10);
       }else{
         changecort(posi2.left - 10,posi4.left - 10,posi6.left - posi5.left,posi8.left - 10);
       }
     });                                
-
-//Player1
+    //------------------------------------------------------------
     $("#service").click(function (){
-      $(this).slideUp();
-      $("#serviceace").slideUp();
-      $("#fault").slideUp();
-      chanco(1);
+      if(server == 0){
+        $(this).slideUp();
+        $("#serviceace").slideUp();
+        $("#fault").slideUp();
+        chanco(1);
+      }else if(server == 1){
+        $(this).slideUp();
+        $("#serviceace").slideUp();
+        $("#fault").slideUp();
+        $("#rm").val("Fault");
+        j=0;
+        stropenbutton();
+        chanco(1);
+      }  
     });
+    //----------------------------------------------------------
     $("#serviceace").click(function (){
-      $("#fault").val("Fault");
-      j=0;
-    });
-    $("#fault").click(function (){
-      j++;
-      if(j%2 == 1){
-        $("#fault").val("Double Fault");
-      }else{
+      if(server == 0){
         $("#fault").val("Fault");
+        j=0;
+      }else if(server == 1){
+        $("#rm").val("Fault");
+        openbutton();
+        j=0;
+      }
+    });
+    //------------------------------------------------------------
+    $("#fault").click(function (){
+      if(server == 0){
+        j++;
+        if(j%2 == 1){
+          $("#fault").val("Double Fault");
+        }else{
+          $("#fault").val("Fault");
+          j=0;
+        }
+      }else if(server == 1){
+          $("#rm").val("Fault");
+          j=0;
+          openbutton();
       }
     }); 
   
-
+    //----------------------------------------------------------
     $("#returnin").click(function (){
-      $(this).slideUp();
-      $("#returnace").slideUp();
-      $("#rm").slideUp();
-      $("#fault").val("Fault");
-      j=0;
-      stropenbutton();
-      chanco(1);
-    }); 
-    $("#returnace,#rm").click(function (){
-      openbutton();
-    }); 
+      if(server == 0){
+        $(this).slideUp();
+        $("#returnace").slideUp();
+        $("#rm").slideUp();
+        $("#fault").val("Fault");
+        j=0;
+        stropenbutton();
+        chanco(1);
+      }else if(server == 1){
+        $(this).slideUp();
+        $("#returnace").slideUp();
+        $("#rm").slideUp();
+        chanco(1);  
+      }
+    });
+    //-----------------------------------------------------------------
+    $("#returnace").click(function (){
+      if(server == 0){
+        openbutton();
+      }else if(server == 1){
+        $("#rm").val("Fault");
+        j=0; 
+      }
+    });
+    //-------------------------------------------------------------------
+    $("#rm").click(function(){
+      if(server == 0){ 
+        $("#fault").val("Fault");
+        j=0;
+        openbutton();
+      }else if(server == 1){
+        j++;
+        if(j%2 == 1){
+          $("#rm").val("Double Fault");
+        }else{
+          $("#rm").val("Fault");
+          j=0;
+        } 
+      }
+    });
+      //-----------------------------------------------------------------
     $("#win1,#side1,#back1,#net1,#win2,#side2,#back2,#net2").click(function (){
       openbutton();
       strclosebutton();
@@ -92,7 +146,7 @@ jQuery(function ($){
     }); 
   
 });
-
+//----------------------------------------------------------------------
 function openbutton(){
   $("#service").slideDown();
   $("#serviceace").slideDown();
@@ -100,26 +154,34 @@ function openbutton(){
   $("#returnin").slideDown();
   $("#returnace").slideDown();
   $("#rm").slideDown();
-  $("#fault").val("Fault");
-  j=0;
-  return 0;
+  if(server == 0){
+    $("#fault").val("Fault");
+    j=0;
+    return 0;
+  }else if(server == 1){
+    $("#rm").val("Fault");
+    j=0;
+  }
 }
+//----------------------------------------------------------------------
 function strclosebutton(){
   $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideUp();
   return 0;
 }
+//-----------------------------------------------------------------------
 function stropenbutton(){
   $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideDown();
   return 0;
 }
+//------------------------------------------------------------------------
 function chanco(a){
   if(a == 1){
-    $("#chanco").slideUp();
+    $("#chanco,#schange").slideUp();
   }else if(a == 2){
-    $("#chanco").slideDown();
+    $("#chanco,#schange").slideDown();
   }
 }
-  
+//-----------------------------------------------------------------------  
 function changecort(po1,po2,po3,po4){
   if(c%2 == 1){
     $(".leftbt").animate({"left":'+=' + po1},"slow");
@@ -142,7 +204,7 @@ function changecort(po1,po2,po3,po4){
   } 
   return 0;
 }
-
+//------------------------------------------------------------------------
 function reposition(){
   if(c%2 == 1){
     $(".leftbt").css({"right":'10px'});

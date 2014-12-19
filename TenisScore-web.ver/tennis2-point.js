@@ -11,7 +11,7 @@ var strbo1 = 0;
 var strbo2 = 0;  //0=stroke 1=bolay
 var server = 0; //0=server=player1 1=server=player2
 
-//ID取得
+//ID取得-----------------------------------------------------------------
 var score1 = $("#score1");
 var score2 = $("#score2");
 var gamest1 = $("#gamest1");
@@ -36,7 +36,7 @@ var set1 = $("#set1");
 var set3 = $("#set3");
 var set5 = $("#set5");
 var sercha = $("#schange");
-
+//------------------------------------------------------------------------
 jQuery(function($){
    StrBolay();
    sercha.click(function(){
@@ -48,25 +48,44 @@ jQuery(function($){
      }
      ServeChange(server);
    });
-
-
-
+   //-------------------------------------------------------------------
    $("#serviceace,#win1,#side2,#back2,#net2").click(function(){
      point1++;
      ClickPoint(score1,point1);
    });
+   //-------------------------------------------------------------------
    $("#returnace,#win2,#side1,#back1,#net1").click(function(){
      point2++;
      ClickPoint(score2,point2);
    });
+   //------------------------------------------------------------------
    fault.click(function(){
-     if(ser == 0){ }
-       
-     
+     if(server == 0){
+       if(fault.val() == "Fault"){
+         point2++;
+         ClickPoint(score2,point2);
+       }
+     }else if(server == 1){
+       point2++;
+       ClickPoint(score2,point2);
+     }
    });
+   //------------------------------------------------------------------
+   rm.click(function(){
+     if(server == 1){
+       if(rm.val() == "Fault"){
+         point1++;
+         ClickPoint(score1,point1);
+       }else{
+       }
+     }else if(server == 0){
+       point1++;
+       ClickPoint(score1,point1);
+     }
+   });    
 });
 
-//スコアーメソッド  
+//スコアーメソッド-------------------------------------------------------  
 function ScorePoint(score,point){
      if(point == 1){
        score.text("15");
@@ -104,7 +123,7 @@ function ScorePoint(score,point){
      return 0;
 }
 
-//ゲームカウントメソッド
+//ゲームカウントメソッド  ------------------------------------------------
 function GamePoint(gamest,gamepoint){
   if(server == 0){
     server = 1;
@@ -133,7 +152,7 @@ function GamePoint(gamest,gamepoint){
   return 0;
 }
 
-//セットカウントメソッド
+//セットカウントメソッド-------------------------------------------------
 function SetPoint(setst,setpoint){
 //セットカウントの取得
   if(set1.is(":checked")){
@@ -160,7 +179,7 @@ function SetPoint(setst,setpoint){
 
 }
 
-//タイブレイクメソッド
+//タイブレイクメソッド --------------------------------------------------
 function TieBreak(score,point){
   console.log(server);
   if((point1+point2)%2 == 1){
@@ -190,7 +209,7 @@ function TieBreak(score,point){
   }
 }
 
-//点数初期化メソッド
+//点数初期化メソッド-----------------------------------------------------
 function ClearPoint(){
   point1=0;
   point2=0;
@@ -198,7 +217,7 @@ function ClearPoint(){
   score2.text("0");
   return 0;
 }
-
+//------------------------------------------------------------------------
 function StrBolay(){
   $("#change1").click(function (){
     i++;                                                                    
@@ -222,7 +241,7 @@ function StrBolay(){
     }
   });
 }
-
+//-----------------------------------------------------------------------
 function ServeChange(ser){
   if(ser == 1){
     service.val("Return In");
@@ -240,6 +259,7 @@ function ServeChange(ser){
     rm.val("Return Miss");
   }
 }
+//-----------------------------------------------------------------------
 function ClickPoint(score,point,gamest,gampoint){
   if(isTiebreak == 0){
     ScorePoint(score,point);
