@@ -86,7 +86,7 @@ jQuery(function($){
    });
    //--------------------------------------------------------------------
    $(".leftbt,.rightbt").click(function(){
-      if((point1+point2)%22 == 0){
+      if((point1+point2)%2 == 0){
         foreback = 0;
       }else{
         foreback = 1;
@@ -136,6 +136,7 @@ function ScorePoint(score,point){
 
 //ゲームカウントメソッド  ------------------------------------------------
 function GamePoint(gamest,gamepoint){
+  foreback = 0;//fore
   if(server == 0){
     server = 1;
   }else if(server == 1){
