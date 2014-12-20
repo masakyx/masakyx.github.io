@@ -10,6 +10,7 @@ var isTiebreak = 0;
 var strbo1 = 0;
 var strbo2 = 0;  //0=stroke 1=bolay
 var server = 0; //0=server=player1 1=server=player2
+var foreback = 0; //0=fore 1=back
 
 //ID取得-----------------------------------------------------------------
 var score1 = $("#score1");
@@ -82,7 +83,17 @@ jQuery(function($){
        point1++;
        ClickPoint(score1,point1);
      }
-   });    
+   });
+   //--------------------------------------------------------------------
+   $(".leftbt,.rightbt").click(function(){
+      if((point1+point2)%22 == 0){
+        foreback = 0;
+      }else{
+        foreback = 1;
+      }
+      console.log(foreback);
+   });
+
 });
 
 //スコアーメソッド-------------------------------------------------------  

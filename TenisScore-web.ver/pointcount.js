@@ -1,10 +1,13 @@
 //Player Object--------------------------------------------------------------------------
 function Player(){
-  var point=0,win=0,side=0,back=0,net=0,serviceace=0,fault=0,doublefault=0,returnace=0,returnmiss=0;
+  this.point=0,this.win=0,this.side=0,this.back=0,this.net=0,this.serviceace=0,this.fault=0,this.doublefault=0,this.returnace=0,this.returnmiss=0;
 }
 //add method
 Player.prototype.move = function(a){
-  a++;
+  var m = a;
+  m++;
+  console.log(m);
+  return m;
 }
 
 //Player1-------------------------------------------------------------------
@@ -18,9 +21,13 @@ var p4f = new Player();  //右下
 var p4b = new Player();
 //--------------------------------------------------------------------------
 jQuery(function($){
-  $(serviceace,sin1,rm,side2,back2,net2).click(function(){
-    p1f.move(p.point);
+  $(serviceace,win1,rm,side2,back2,net2).click(function(){
+    //p1f.move(p1f.point);
+    p1f.point++;
+    console.log(p1f.point + "+" + p2f.point);
   });
 
 
 });
+
+
