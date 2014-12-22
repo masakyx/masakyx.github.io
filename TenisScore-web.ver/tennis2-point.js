@@ -24,7 +24,7 @@ var returnin = $("#returnin");
 var serviceace = $("#serviceace");
 var returnace = $("#returnace");
 var fault = $("#fault");
-var rm = $("#rm");
+var rm = $("#rm");                                                        
 var win1 = $("#win1");
 var win2 = $("#win2");
 var side1 = $("#side1");
@@ -90,7 +90,6 @@ jQuery(function($){
       }else{
         foreback = 1;
       }
-      console.log("foreback" + foreback);
    });
 
 });
@@ -231,7 +230,6 @@ function ClearPoint(){
 function StrBolay(){
   $("#change1").click(function (){
     i++;                                                                    
-    console.log("strbo" + strbo1);
     if(i%2 == 1){
       $(this).css("background-image","url(bolay.jpg)");
       strbo1 = 1;
