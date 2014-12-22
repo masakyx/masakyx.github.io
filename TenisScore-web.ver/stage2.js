@@ -6,10 +6,12 @@
 
 jQuery(function ($){
 //初期設定 
-  $('input[name="usn2"],input[name="usn4"]').fadeOut();
-  strclosebutton();   
-  $(".leftbt").css("background-color","#b3b3b3");
-  $(".rightbt").css("background-color","#7fff00");  
+  $(document).ready(function(){
+    $('input[name="usn2"],input[name="usn4"]').fadeOut();
+    strclosebutton();   
+    $(".leftbt").css("background-color","#b3b3b3");
+    $(".rightbt").css("background-color","#7fff00");  
+  });
 
  
 
