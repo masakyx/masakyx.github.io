@@ -6,7 +6,7 @@
 
 jQuery(function ($){
 //初期設定 
-  $('input[name="usn2"],input[name="usn4"]').slideUp();
+  $('input[name="usn2"],input[name="usn4"]').fadeOut();
   strclosebutton();   
   $(".leftbt").css("background-color","#b3b3b3");
   $(".rightbt").css("background-color","#7fff00");  
@@ -18,10 +18,10 @@ jQuery(function ($){
 
 
     if(gametypecheck){
-      $('input[name="usn2"],input[name="usn4"]').slideUp();
+      $('input[name="usn2"],input[name="usn4"]').fadeOut();
       $('input[name="usn3"]').val("player2");
     }else{
-      $('input[name="usn2"],input[name="usn4"]').slideDown();
+      $('input[name="usn2"],input[name="usn4"]').fadeIn();
       $('input[name="usn3"]').val("player3");
     }
   });
@@ -54,14 +54,14 @@ jQuery(function ($){
     //------------------------------------------------------------
     $("#service").click(function (){
       if(server == 0){
-        $(this).slideUp();
-        $("#serviceace").slideUp();
-        $("#fault").slideUp();
+        $(this).fadeOut();
+        $("#serviceace").fadeOut();
+        $("#fault").fadeOut();
         chanco(1);
       }else if(server == 1){
-        $(this).slideUp();
-        $("#serviceace").slideUp();
-        $("#fault").slideUp();
+        $(this).fadeOut();
+        $("#serviceace").fadeOut();
+        $("#fault").fadeOut();
         $("#rm").val("Fault");
         j=0;
         stropenbutton();
@@ -85,31 +85,33 @@ jQuery(function ($){
         j++;
         if(j%2 == 1){
           $("#fault").val("Double Fault");
+          $("#schange").fadeOut();
         }else{
           $("#fault").val("Fault");
+          $("#schange").fadeIn();
           j=0;
         }
       }else if(server == 1){
           $("#rm").val("Fault");
           j=0;
-          openbutton();
+          openbutton(); 
       }
     }); 
   
     //----------------------------------------------------------
     $("#returnin").click(function (){
       if(server == 0){
-        $(this).slideUp();
-        $("#returnace").slideUp();
-        $("#rm").slideUp();
+        $(this).fadeOut();
+        $("#returnace").fadeOut();
+        $("#rm").fadeOut();
         $("#fault").val("Fault");
         j=0;
         stropenbutton();
         chanco(1);
       }else if(server == 1){
-        $(this).slideUp();
-        $("#returnace").slideUp();
-        $("#rm").slideUp();
+        $(this).fadeOut();
+        $("#returnace").fadeOut();
+        $("#rm").fadeOut();
         chanco(1);  
       }
     });
@@ -132,8 +134,10 @@ jQuery(function ($){
         j++;
         if(j%2 == 1){
           $("#rm").val("Double Fault");
+          $("#schange").fadeOut();
         }else{
           $("#rm").val("Fault");
+          $("#schange").fadeIn();
           j=0;
         } 
       }
@@ -148,37 +152,37 @@ jQuery(function ($){
 });
 //----------------------------------------------------------------------
 function openbutton(){
-  $("#service").slideDown();
-  $("#serviceace").slideDown();
-  $("#fault").slideDown();
-  $("#returnin").slideDown();
-  $("#returnace").slideDown();
-  $("#rm").slideDown();
+  $("#service").fadeIn();
+  $("#serviceace").fadeIn();
+  $("#fault").fadeIn();
+  $("#returnin").fadeIn();
+  $("#returnace").fadeIn();
+  $("#rm").fadeIn();
   if(server == 0){
     $("#fault").val("Fault");
     j=0;
     return 0;
   }else if(server == 1){
-    $("#rm").val("Fault");
+    $("#rm").val("Fault");       
     j=0;
   }
 }
 //----------------------------------------------------------------------
 function strclosebutton(){
-  $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideUp();
+  $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").fadeOut();
   return 0;
 }
 //-----------------------------------------------------------------------
 function stropenbutton(){
-  $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").slideDown();
+  $("#win1,#win2,#side1,#side2,#back1,#back2,#net1,#net2").fadeIn();
   return 0;
 }
 //------------------------------------------------------------------------
 function chanco(a){
   if(a == 1){
-    $("#chanco,#schange").slideUp();
+    $("#chanco,#schange").fadeOut();
   }else if(a == 2){
-    $("#chanco,#schange").slideDown();
+    $("#chanco,#schange").fadeIn();
   }
 }
 //-----------------------------------------------------------------------  

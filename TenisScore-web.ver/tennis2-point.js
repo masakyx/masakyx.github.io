@@ -41,7 +41,6 @@ var sercha = $("#schange");
 jQuery(function($){
    StrBolay();
    sercha.click(function(){
-     console.log(server);
      if(server == 0){
        server = 1;
      }else if(server == 1){
@@ -91,7 +90,7 @@ jQuery(function($){
       }else{
         foreback = 1;
       }
-      console.log(foreback);
+      console.log("foreback" + foreback);
    });
 
 });
@@ -193,7 +192,6 @@ function SetPoint(setst,setpoint){
 
 //タイブレイクメソッド --------------------------------------------------
 function TieBreak(score,point){
-  console.log(server);
   if((point1+point2)%2 == 1){
     if(server == 0){
       server = 1;
@@ -233,7 +231,7 @@ function ClearPoint(){
 function StrBolay(){
   $("#change1").click(function (){
     i++;                                                                    
-    console.log(strbo1);
+    console.log("strbo" + strbo1);
     if(i%2 == 1){
       $(this).css("background-image","url(bolay.jpg)");
       strbo1 = 1;
