@@ -1,6 +1,6 @@
 //Player Object--------------------------------------------------------------------------
 function Player(){
-  this.point=0,this.win=0,this.side=0,this.back=0,this.net=0,this.serviceace=0,this.fault=0,this.doublefault=0,this.returnace=0,this.returnmiss=0,this.spoint=0,this.bpoint=0,this.swin=0,this.bwin=0,this.sback=0,this.bback=0,this.sside=0,this.bside=0,this.snet=0,this.bnet=0,this.fserve=0,this.sserve=0,this.fservein=0.this.sservein=0,this.returnin=0,this.allreturn=0;
+  this.point=0,this.win=0,this.side=0,this.back=0,this.net=0,this.serviceace=0,this.fault=0,this.doublefault=0,this.returnace=0,this.returnmiss=0,this.spoint=0,this.bpoint=0,this.swin=0,this.bwin=0,this.sback=0,this.bback=0,this.sside=0,this.bside=0,this.snet=0,this.bnet=0,this.fserve=0,this.sserve=0,this.fservein=0,this.sservein=0,this.returnin=0,this.allreturn=0;
 }
 //add method
 Player.prototype.move = function(a){
@@ -16,7 +16,7 @@ var p1b = new Player();
 var p1 = new Player();
 var p2f = new Player();  //左下
 var p2b = new Player();
-var p3 = new Player();
+var p2 = new Player();
 var p3f = new Player();  //右上
 var p3b = new Player();
 var p3 = new Player();
@@ -154,7 +154,7 @@ jQuery(function($){
   //-----------Winshot------------------------------------------------------
   $(win1).click(function(){
     p1.win++;
-    if(strbo == 0){
+    if(strbo1 == 0){
       p1.swin++;
     }else{
       p1.bwin++;
